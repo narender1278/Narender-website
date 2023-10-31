@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5WVFN2XL');</script>
-<!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=TAG_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-1LVS4QM2M2');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Narender's site</title>
@@ -222,25 +224,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script>
+    
     // Function to track the click event
     function trackClickToAnalytics(element) {
       element.addEventListener('click', function() {
         // Get the inner HTML of the clicked element
         var innerHTML = element.innerHTML;
-        
-        // Send an event to Google Analytics
-        gtag('event', 'element_click', {
-          'event_category': 'Element Clicked',
-          'event_label': innerHTML
-        });
+        gtag("event", "purchase", {
+            'event_category': 'Element Clicked',
+            'event_label': innerHTML
+          });
       });
-    }
-
-    // Find the element by its ID and track clicks on it
-    var elementToTrack = document.getElementById('css-link');
-    if (elementToTrack) {
-      trackClickToAnalytics(css-link);
-    }
-  </script>
+    };
+    </script>
 </body>
 </html>
