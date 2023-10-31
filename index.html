@@ -16,6 +16,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css" />
+    <script>
+    // Replace 'YOUR_TRACKING_ID' with your actual Google Analytics tracking ID
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'YOUR_TRACKING_ID');
+  </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -212,5 +221,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+    // Function to track the click event
+    function trackClickToAnalytics(element) {
+      element.addEventListener('click', function() {
+        // Get the inner HTML of the clicked element
+        var innerHTML = element.innerHTML;
+        
+        // Send an event to Google Analytics
+        gtag('event', 'element_click', {
+          'event_category': 'Element Clicked',
+          'event_label': innerHTML
+        });
+      });
+    }
+
+    // Find the element by its ID and track clicks on it
+    var elementToTrack = document.getElementById('css-link');
+    if (elementToTrack) {
+      trackClickToAnalytics(css-link);
+    }
+  </script>
 </body>
 </html>
