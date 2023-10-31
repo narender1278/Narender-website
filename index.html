@@ -9,6 +9,15 @@
         gtag('js', new Date());
         gtag('config', 'G-1LVS4QM2M2',{ 'debug_mode': true });
     </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1LVS4QM2M2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1LVS4QM2M2');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Narender's site</title>
@@ -229,7 +238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.getElementById("css-link").addEventListener('click', function() {
         // Get the inner HTML of the clicked element
         var innerHTML = element.innerHTML;
-        gtag("event", "purchase", {
+        gtag("event", "css-link", {
             'event_category': 'Element Clicked',
             'event_label': innerHTML
           });
