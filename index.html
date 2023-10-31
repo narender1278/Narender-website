@@ -226,8 +226,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
     
     // Function to track the click event
-    function trackClickToAnalytics(element) {
-      element.addEventListener('click', function() {
+  
+      document.getElementById("css-link").addEventListener('click', function() {
         // Get the inner HTML of the clicked element
         var innerHTML = element.innerHTML;
         gtag("event", "purchase", {
@@ -235,7 +235,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             'event_label': innerHTML
           });
       });
-    };
     </script>
 </body>
 </html>
