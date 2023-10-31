@@ -41,6 +41,14 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WVFN2XL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+    <form id="registrationForm">
+  <!-- Your form fields -->
+  <input type="email" id="emailField" name="email" placeholder="Email">
+  <!-- Other fields -->
+  <button type="submit" id="loginButton">Log In</button>
+</form>
+
+
   <div class="hero">
     <div class=" px-4 pt-5 mb-5 text-center border-bottom">
         <div class="overflow-hidden" style="max-height: 50vh;">
@@ -244,5 +252,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           });
       });
     </script>
+    <script>
+  // JavaScript to handle user signup and push data to the dataLayer
+  document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Get the user's email
+    var userEmail = document.getElementById("emailField").value;
+
+    // Push the userSignup event and email to the dataLayer
+    dataLayer.push({
+      'event': 'userLogin',
+      'userEmail': userEmail
+    });
+
+    this.submit();
+  });
+</script>
 </body>
 </html>
