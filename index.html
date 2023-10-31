@@ -261,11 +261,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var userEmail = document.getElementById("emailField").value;
 
     // Push the userSignup event and email to the dataLayer
-    dataLayer.push({
-      'event': 'userLogin',
-      'userEmail': userEmail
-    });
-
+       gtag("event", "loginButton", {
+            'event_category': 'Submit Button Clicked',
+            'userEmail': userEmail
+          });
     this.submit();
   });
 </script>
